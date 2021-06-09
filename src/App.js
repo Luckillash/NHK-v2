@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+// PÁGINAS
+import Home from './Páginas/Home'
+import Error from './Páginas/error'
+// COMPONENTES
+import Navbar from './Componentes/Cabeza/navbar'
+import Loading from './Componentes/loading'
 
 function App() {
+  const [loader, setLoader] = useState(false)
+
+  const scrollTop = () => {
+    window.scrollTo(0, 0)
+  }
+
+  useEffect(() => {
+    scrollTop()
+    setLoader(true)
+    setTimeout(() => {
+      scrollTop()
+    }, 1000)
+    setTimeout(() => {
+      setLoader(false)
+    }, 2000)
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {loader ? <Loading /> : null}
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route path='*'>
+            <Error />
+          </Route>
+        </Switch>
+      </Router>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

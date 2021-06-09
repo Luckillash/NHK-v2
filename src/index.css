@@ -1,13 +1,406 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  /* Luz */
+  /* Colores */
+  /* Fondo */
+  color: black;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Oswald', sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* NAVBAR ----------------------------------------------------------*/
+
+.Scrolling {
+  /* STYLE */
+  font-size: 1.5rem;
+  font-weight: 100;
+  background-color: #1c1d19;
+  color: white;
+  /* DISPLAY */
+  display: flex;
+  align-items: center;
+  position: fixed;
+  height: 56px;
+  width: 100vw;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.NotScrolling {
+  /* STYLE */
+  font-size: 1.5rem;
+  font-weight: 100;
+  background-color: transparent;
+  color: #000000;
+  /* DISPLAY */
+  display: flex;
+  align-items: center;
+  position: fixed;
+  height: 56px;
+  width: 100vw;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.NotScrolling:hover {
+  /* STYLE */
+  background-color: #1c1d19;
+  color: white;
+}
+
+.logo {
+  /* DISPLAY */
+  width: 60px;
+  margin-left: 30px;
+}
+
+.nav-title {
+  font-size: 2rem;
+  margin-left: 20px;
+  margin-bottom: 2.5px;
+  font-family: 'Lato', sans-serif;
+}
+
+/* LOADER -------------------------------------------------------*/
+
+.cargando {
+  /* STYLE */
+  background-color: black;
+  background-image: radial-gradient(#444444, #202020 5%, #000000);
+  /* DISPLAY */
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+}
+
+.svg {
+  /* DISPLAY */
+  height: 75vh;
+}
+
+path {
+  /* STYLE */
+  fill-opacity: 1;
+}
+
+/* HERO ------------------------------------------------------------*/
+
+.header {
+  /* DISPLAY */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 480px;
+}
+
+.hero {
+  /* DISPLAY */
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  filter: blur(2px) brightness(50%);
+}
+
+.header-title {
+  /* STYLE */
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 64pt;
+  letter-spacing: 2px;
+  color: white;
+}
+
+/* TITULAR  -------------------------------------------------------*/
+
+.container-titular {
+  /* STYLE */
+  background-color: whitesmoke;
+  color: #434343;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 2px;
+  /* DISPLAY */
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titular {
+  /* STYLE */
+  width: 500px;
+  /* DISPLAY */
+  margin-top: 20px;
+}
+
+.subtitular {
+  /* STYLE */
+  font-size: 16pt;
+}
+
+hr {
+  /* DISPLAY */
+  margin-top: 40px;
+  width: 85.5%;
+}
+
+/* CUERPO ------------------------------------------------- */
+
+.colecciones {
+  /* STYLE */
+  background-color: whitesmoke;
+  /* DISPLAY */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+/* COLECCION 1 */
+
+.coleccion-1 {
+  /* STYLE */
+  background-color: rgb(182, 182, 182);
+  /* DISPLAY */
+  display: flex;
+  width: 85.5%;
+}
+
+.short {
+  /* DISPLAY */
+  width: 40%;
+}
+
+.info1 {
+  /* DISPLAY */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%;
+}
+
+/* COLECCION 2 */
+
+.coleccion-2 {
+  /* STYLE */
+  background-color: rgb(182, 182, 182);
+  /* DISPLAY */
+  display: flex;
+
+  margin-top: 30px;
+  width: 85.5%;
+}
+
+.large {
+  /* DISPLAY */
+  width: 40%;
+}
+
+.info2 {
+  /* DISPLAY */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%;
+}
+
+/* INFO COLECCIONES */
+
+.nombre {
+  /* STYLE */
+  color: #434343;
+  font-size: 54pt;
+  letter-spacing: 0.5px;
+}
+
+.precio {
+  /* STYLE */
+  color: #434343;
+  font-size: 34pt;
+  letter-spacing: 0.5px;
+}
+
+.buttonBuy {
+  font-family: 'Oswald', sans-serif;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #434343;
+  color: white;
+  font-size: 30px;
+  border: solid 2px #434343;
+}
+
+/* PHOTO FEED ------------------------------------------------- */
+
+.photoFeed {
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.photoFeed-Body {
+  /* STYLE */
+  background-color: whitesmoke;
+  /* DISPLAY */
+  display: flex;
+  justify-content: space-between;
+  width: 85.5%;
+}
+
+.feed1 {
+  width: 48%;
+  position: relative;
+}
+.feed2 {
+  width: 48%;
+  position: relative;
+}
+
+.foto {
+  /* DISPLAY */
+
+  width: 100%;
+  height: 100%;
+}
+
+.buttonFeed1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 45%;
+}
+
+.buttonFeed2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 45%;
+}
+
+.before {
+  color: white;
+  background-color: rgb(48, 48, 48);
+  border-radius: 100%;
+  width: 12.5%;
+  height: 12.5%;
+  margin-left: 2%;
+  filter: opacity(80%);
+}
+
+.after {
+  color: white;
+  background-color: rgb(48, 48, 48);
+  border-radius: 100%;
+  width: 12.5%;
+  height: 12.5%;
+  margin-right: 2%;
+  filter: opacity(80%);
+}
+
+.after:hover,
+.before:hover {
+  box-shadow: 0px 0px 10px rgb(48, 48, 48);
+}
+
+/* BANNER -------------------------------------------------------- */
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 100%;
+  background-color: #323232;
+}
+
+.bannerButton {
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  background-color: transparent;
+  border: solid 1px whitesmoke;
+}
+
+/* INFO ---------------------------------------------------------- */
+
+.info {
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+}
+
+.info-container {
+  padding-top: 40px;
+  margin-bottom: 20px;
+  width: 85.5%;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fotoInfo {
+  width: 30%;
+}
+
+/* PANTALLAS PEQUEÑAS */
+@media (min-width: 0px) and (max-width: 700px) {
+  .coleccion-1 {
+    flex-direction: column;
+  }
+  .info1 {
+    width: 100%;
+  }
+  .short {
+    width: 100%;
+  }
+
+  .coleccion-2 {
+    flex-direction: column;
+  }
+
+  .info2 {
+    width: 100%;
+  }
+
+  .large {
+    width: 100%;
+  }
+
+  .buttonBuy {
+    margin-bottom: 20px;
+  }
+
+  /* .buttonFeed1 {
+    top: 0%;
+  }
+
+  .buttonFeed2 {
+    top: 0%;
+  } */
+}
+
+/* PANTALLAS GRANDES */
+
+@media (min-width: 1400px) {
 }
